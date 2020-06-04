@@ -1,0 +1,24 @@
+<br>
+<div class="row">
+    <div class="col-sm-8">
+        <div class="row">
+            <div class="col-sm-4">
+               <span>{{post.user.name}}</span>
+               <p>{{post.date | date: 'HH:mm dd. LLLL '}}</p>
+               <img src="assets/images/{{post.user.picture || 'default.jpg'}}" width="100%">
+            </div>
+            <div class="col-sm-8">
+                <p>{{post.text}}</p>
+                <button class="btn btn-warning" (click)='openModal()'>New Comment</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="col-sm-12" *ngFor="let item of commentList?.comments; let i = index">
+            <fb-comment-item [comment]='item' [i]='i'></fb-comment-item>
+        </div>
+    </div>
+</div>
+<hr>
+<br>
+<br>

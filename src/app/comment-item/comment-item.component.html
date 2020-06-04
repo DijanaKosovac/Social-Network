@@ -1,0 +1,21 @@
+<ngb-accordion activeIds="side-bar-accordion-1">
+    <ngb-panel id="side-bar-accordion-1" class="foo">
+      <ng-template ngbPanelTitle>
+          <div class="title">
+              <p>#{{i+1}} | {{comment.user.name}} | {{comment.date | date: 'HH:mm dd. LLLL '}} 
+            <ngb-rating [(rate)]="comment.rating" readonly='true'></ngb-rating>      
+            </p>
+          </div>
+      </ng-template>
+      <ng-template ngbPanelContent>
+        <div class="row">
+             <div class="col-sm-4">
+                 <img src="assets/images/{{comment.user.picture || 'default.jpg'}}" width="100%">
+                 </div>
+                 <div class="col-sm-8">
+                 <p>{{comment.text}}</p>
+                 </div>
+             </div>
+     </ng-template>
+    </ngb-panel>
+    </ngb-accordion>

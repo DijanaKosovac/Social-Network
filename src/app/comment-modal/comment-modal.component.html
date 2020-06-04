@@ -1,0 +1,10 @@
+<br>
+<form #registerForm= 'ngForm' novalidate>
+  <div class="form-group">
+    <textarea class="form-control" name="comment" type="text" placeholder="Comment" [(ngModel)]="comment.text" #message='ngModel' required></textarea>
+    <small class="text-danger" *ngIf="message.touched && message.errors">Comment is required</small>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary" style="margin:20px" [disabled]='registerForm.form.invalid' (click)='newComment()'>Submit</button>
+  </div>
+</form>
